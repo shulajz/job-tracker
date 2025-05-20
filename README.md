@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# DevJobTracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**DevJobTracker** is a modern, intuitive job application tracking system designed specifically for developers and tech professionals. With a polished kanban-style interface, it helps you stay organized and monitor your job search journey from application to offer.
 
-## Available Scripts
+### Live Demo
 
-In the project directory, you can run:
+Check out the live application here:  
+ [https://shulajz.github.io/job-tracker/](https://shulajz.github.io/job-tracker/)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Kanban Board Interface**  
+  Visually track your applications across four stages: _Applied_, _Interviewing_, _Offer_, and _Rejected_.
 
-### `npm test`
+- **Drag & Drop Functionality**  
+  Easily move job cards between stages using smooth drag-and-drop actions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Dark/Light Mode**  
+  Toggle between dark and light themes to match your preference.
 
-### `npm run build`
+- **Search & Filter**  
+  Quickly find specific job applications by keyword.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Persistent Storage**  
+  Your data is saved locally using `localStorage`—no sign-up or login required.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Mobile Responsive**  
+  Fully responsive layout for seamless use on any device.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **React**
+- **JavaScript**
+- **Tailwind CSS**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📂 Project Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To run locally:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/shulajz/job-tracker.git
+cd job-tracker
+npm install
+npm start
+```
