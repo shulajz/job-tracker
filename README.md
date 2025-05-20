@@ -39,7 +39,7 @@ Check out the live application here:
 
 ---
 
-## 📂 Project Setup
+## Project Setup
 
 To run locally:
 
