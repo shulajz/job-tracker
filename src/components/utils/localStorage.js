@@ -1,0 +1,87 @@
+// Load data from localStorage or use demo data
+export const loadInitialData = () => {
+  try {
+    // Get jobs from localStorage
+    const savedJobs = localStorage.getItem("jobTrackerJobs");
+
+    if (savedJobs) {
+      return JSON.parse(savedJobs);
+    }
+  } catch (error) {
+    console.error("Error loading from localStorage:", error);
+  }
+
+  // Fallback demo data if nothing in localStorage
+  const demoJobs = [
+    {
+      id: 1,
+      company: "TechCorp",
+      title: "Frontend Developer",
+      status: "Applied",
+      date: "2025-05-10",
+    },
+    {
+      id: 2,
+      company: "DevStartup",
+      title: "Full Stack Engineer",
+      status: "Interviewing",
+      date: "2025-05-05",
+    },
+    {
+      id: 3,
+      company: "BigTech Inc",
+      title: "Senior React Developer",
+      status: "Offer",
+      date: "2025-04-28",
+    },
+    {
+      id: 4,
+      company: "CodeWizards",
+      title: "React Native Developer",
+      status: "Applied",
+      date: "2025-05-15",
+    },
+  ];
+
+  // Save demo data to localStorage
+  try {
+    localStorage.setItem("jobTrackerJobs", JSON.stringify(demoJobs));
+  } catch (error) {
+    console.error("Error saving to localStorage:", error);
+  }
+
+  return demoJobs;
+};
+
+// Load dark mode preference
+export const loadDarkModePreference = () => {
+  try {
+    const savedDarkMode = localStorage.getItem("jobTrackerDarkMode");
+    return savedDarkMode ? JSON.parse(savedDarkMode) : false;
+  } catch (error) {
+    console.error("Error loading dark mode preference:", error);
+    return false;
+  }
+};
+
+// Load filter settings
+export const loadFilterSettings = () => {
+  try {
+    const savedFilters = localStorage.getItem("jobTrackerFilters");
+    return savedFilters
+      ? JSON.parse(savedFilters)
+      : { search: "", status: "all" };
+  } catch (error) {
+    console.error("Error loading filter settings:", error);
+    return { search: "", status: "all" };
+  }
+};
+
+// Save data to localStorage
+export const saveToLocalStorage = (key, data) => {
+  try {
+    localStorage.setItem(key, JSON.stringify(data));
+  } catch (error) {
+    console.error(`Error saving ${key} to localStorage:`, error);
+  }
+};

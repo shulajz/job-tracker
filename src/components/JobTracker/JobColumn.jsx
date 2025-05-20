@@ -1,0 +1,68 @@
+import React from "react";
+import JobCard from "../JobCard";
+import EmptyState from "./EmptyState";
+import { getStatusColor, getStatusGlow, getStatusIcon } from "../utils/colors";
+
+const JobColumn = ({
+  status,
+  jobs,
+  darkMode,
+  onDrop,
+  onDragOver,
+  onEditJob,
+  onDeleteJob,
+  handleDragStart,
+  onAddJob,
+}) => {
+  return (
+    <div className="flex flex-col h-full transform transition-all duration-300 hover:scale-[1.02]">
+      <div
+        className={`rounded-t-lg bg-gradient-to-r ${getStatusColor(
+          status,
+          darkMode
+        )} py-3 px-4 text-white flex justify-between items-center shadow-lg ${getStatusGlow(
+          status,
+          darkMode
+        )}`}
+      >
+        <h2 className="font-medium flex items-center text-lg">
+          {getStatusIcon(status)}
+          {status}
+        </h2>
+        <span className="px-2 py-1 rounded-full text-xs bg-white/30 backdrop-blur-md text-white font-medium border border-white/20">
+          {jobs.length}
+        </span>
+      </div>
+      <div
+        className={`flex-1 rounded-b-lg ${
+          darkMode
+            ? "bg-gray-800/90 backdrop-blur-sm"
+            : "bg-white/90 backdrop-blur-sm"
+        } p-3 shadow-md min-h-[400px] transition-colors duration-200 border border-t-0 ${
+          darkMode ? "border-gray-700" : "border-gray-100"
+        }`}
+        onDrop={onDrop}
+        onDragOver={onDragOver}
+      >
+        {jobs.length === 0 ? (
+          <EmptyState status={status} darkMode={darkMode} onAddJob={onAddJob} />
+        ) : (
+          <div className="space-y-3">
+            {jobs.map((job) => (
+              <JobCard
+                key={job.id}
+                job={job}
+                darkMode={darkMode}
+                onEdit={() => onEditJob(job)}
+                onDelete={() => onDeleteJob(job.id)}
+                handleDragStart={handleDragStart}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default JobColumn;
