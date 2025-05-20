@@ -14,10 +14,6 @@ const JobColumn = ({
   handleDragStart,
   onAddJob,
 }) => {
-  // Calculate the exact height needed for 4 cards
-  // Each card is 100px high, with 12px spacing (space-y-3) between them,
-  // and 12px padding (p-3) on top and bottom
-  // Total: (4 × 100px) + (3 × 12px) + (2 × 12px) = 400 + 36 + 24 = 460px
   const columnHeight = "460px";
 
   return (

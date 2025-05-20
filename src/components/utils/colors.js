@@ -1,6 +1,5 @@
 import React from "react";
 
-// Get color for status
 export const getStatusColor = (status, isDark) => {
   if (status === "Applied") {
     return isDark ? "from-blue-600 to-cyan-500" : "from-blue-500 to-cyan-400";
@@ -17,7 +16,6 @@ export const getStatusColor = (status, isDark) => {
   }
 };
 
-// Get border glow for columns
 export const getStatusGlow = (status, isDark) => {
   if (status === "Applied") {
     return isDark
@@ -38,7 +36,6 @@ export const getStatusGlow = (status, isDark) => {
   }
 };
 
-// Get card accent colors
 export const getCardAccentColor = (status, isDark) => {
   if (status === "Applied") {
     return {
@@ -75,7 +72,6 @@ export const getCardAccentColor = (status, isDark) => {
   }
 };
 
-// Get status icons
 export const getStatusIcon = (status) => {
   if (status === "Applied") {
     return (
@@ -136,7 +132,6 @@ export const getStatusIcon = (status) => {
   }
 };
 
-// Get empty state background color
 export const getEmptyStateBgColor = (status, darkMode) => {
   if (status === "Applied") {
     return darkMode
@@ -157,7 +152,6 @@ export const getEmptyStateBgColor = (status, darkMode) => {
   }
 };
 
-// Get empty state icon color
 export const getEmptyStateIconColor = (status, darkMode) => {
   if (status === "Applied") {
     return darkMode ? "text-blue-400" : "text-blue-500";

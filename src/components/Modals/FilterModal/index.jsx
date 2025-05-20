@@ -24,7 +24,6 @@ const FilterModal = ({ onClose, filters, setFilters, darkMode }) => {
     onClose();
   };
 
-  // Prevent backdrop click from closing modal
   const handleModalClick = (e) => {
     e.stopPropagation();
   };

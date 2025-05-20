@@ -28,7 +28,6 @@ const JobModal = ({ onClose, onSubmit, job, darkMode }) => {
     onSubmit(formData);
   };
 
-  // Prevent backdrop click from closing modal
   const handleModalClick = (e) => {
     e.stopPropagation();
   };

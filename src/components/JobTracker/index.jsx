@@ -11,7 +11,6 @@ import {
 } from "../utils/localStorage";
 
 const JobTracker = () => {
-  // Initialize state with data from localStorage
   const [jobs, setJobs] = useState(loadInitialData());
   const [darkMode, setDarkMode] = useState(loadDarkModePreference());
   const [filters, setFilters] = useState(loadFilterSettings());
@@ -19,27 +18,22 @@ const JobTracker = () => {
   const [showFilterModal, setShowFilterModal] = useState(false);
   const [editingJob, setEditingJob] = useState(null);
 
-  // Save jobs to localStorage whenever they change
   useEffect(() => {
     saveToLocalStorage("jobTrackerJobs", jobs);
   }, [jobs]);
 
-  // Save dark mode preference to localStorage
   useEffect(() => {
     saveToLocalStorage("jobTrackerDarkMode", darkMode);
   }, [darkMode]);
 
-  // Save filters to localStorage
   useEffect(() => {
     saveToLocalStorage("jobTrackerFilters", filters);
   }, [filters]);
 
-  // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  // Add new job
   const addJob = (job) => {
     const newJob = {
       ...job,
@@ -49,25 +43,21 @@ const JobTracker = () => {
     setShowAddModal(false);
   };
 
-  // Update existing job
   const updateJob = (updatedJob) => {
     setJobs(jobs.map((job) => (job.id === updatedJob.id ? updatedJob : job)));
     setEditingJob(null);
     setShowAddModal(false);
   };
 
-  // Delete job
   const deleteJob = (id) => {
     setJobs(jobs.filter((job) => job.id !== id));
   };
 
-  // Handle editing a job
   const handleEditJob = (job) => {
     setEditingJob(job);
     setShowAddModal(true);
   };
 
-  // Handle drag and drop
   const handleDragStart = (e, id) => {
     e.dataTransfer.setData("jobId", id);
   };
@@ -128,7 +118,6 @@ const JobTracker = () => {
           : "bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-800"
       }`}
     >
-      {/* Decorative background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div
           className={`absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-10 ${
@@ -147,7 +136,6 @@ const JobTracker = () => {
         ></div>
       </div>
 
-      {/* Header */}
       <Header
         darkMode={darkMode}
         filters={filters}
@@ -157,10 +145,8 @@ const JobTracker = () => {
         openAddModal={openAddModal}
       />
 
-      {/* Main content */}
       <main className="relative z-10 py-8 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
-          {/* Applied Column */}
           <JobColumn
             status="Applied"
             jobs={applied}
@@ -173,7 +159,6 @@ const JobTracker = () => {
             onAddJob={openAddModal}
           />
 
-          {/* Interviewing Column */}
           <JobColumn
             status="Interviewing"
             jobs={interviewing}
@@ -186,7 +171,6 @@ const JobTracker = () => {
             onAddJob={openAddModal}
           />
 
-          {/* Offer Column */}
           <JobColumn
             status="Offer"
             jobs={offers}
@@ -199,7 +183,6 @@ const JobTracker = () => {
             onAddJob={openAddModal}
           />
 
-          {/* Rejected Column */}
           <JobColumn
             status="Rejected"
             jobs={rejected}
@@ -214,7 +197,6 @@ const JobTracker = () => {
         </div>
       </main>
 
-      {/* Add/Edit Job Modal */}
       {showAddModal && (
         <JobModal
           onClose={closeAddModal}
@@ -224,7 +206,6 @@ const JobTracker = () => {
         />
       )}
 
-      {/* Filter Modal */}
       {showFilterModal && (
         <FilterModal
           onClose={closeFilterModal}

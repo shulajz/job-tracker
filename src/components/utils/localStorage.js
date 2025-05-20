@@ -1,7 +1,5 @@
-// Load data from localStorage or use demo data
 export const loadInitialData = () => {
   try {
-    // Get jobs from localStorage
     const savedJobs = localStorage.getItem("jobTrackerJobs");
 
     if (savedJobs) {
@@ -99,7 +97,6 @@ export const loadInitialData = () => {
     },
   ];
 
-  // Save demo data to localStorage
   try {
     localStorage.setItem("jobTrackerJobs", JSON.stringify(demoJobs));
   } catch (error) {
@@ -109,7 +106,6 @@ export const loadInitialData = () => {
   return demoJobs;
 };
 
-// Load dark mode preference
 export const loadDarkModePreference = () => {
   try {
     const savedDarkMode = localStorage.getItem("jobTrackerDarkMode");
@@ -120,7 +116,6 @@ export const loadDarkModePreference = () => {
   }
 };
 
-// Load filter settings
 export const loadFilterSettings = () => {
   try {
     const savedFilters = localStorage.getItem("jobTrackerFilters");
@@ -133,7 +128,6 @@ export const loadFilterSettings = () => {
   }
 };
 
-// Save data to localStorage
 export const saveToLocalStorage = (key, data) => {
   try {
     localStorage.setItem(key, JSON.stringify(data));
