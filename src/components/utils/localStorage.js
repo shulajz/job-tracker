@@ -41,6 +41,62 @@ export const loadInitialData = () => {
       status: "Applied",
       date: "2025-05-15",
     },
+    {
+      id: 5,
+      company: "TechGiant",
+      title: "Frontend Engineer",
+      status: "Rejected",
+      date: "2025-05-01",
+    },
+    {
+      id: 6,
+      company: "StartupXYZ",
+      title: "UI Developer",
+      status: "Rejected",
+      date: "2025-04-22",
+    },
+    {
+      id: 7,
+      company: "WebCorp",
+      title: "JavaScript Developer",
+      status: "Applied",
+      date: "2025-05-17",
+    },
+    {
+      id: 8,
+      company: "AppMakers",
+      title: "Frontend Architect",
+      status: "Applied",
+      date: "2025-05-18",
+    },
+    {
+      id: 9,
+      company: "SoftSolutions",
+      title: "React Developer",
+      status: "Applied",
+      date: "2025-05-19",
+    },
+    {
+      id: 10,
+      company: "DevTeam",
+      title: "Senior Frontend Developer",
+      status: "Interviewing",
+      date: "2025-05-02",
+    },
+    {
+      id: 11,
+      company: "CodeCrafters",
+      title: "UI Engineer",
+      status: "Interviewing",
+      date: "2025-05-03",
+    },
+    {
+      id: 12,
+      company: "WebWizards",
+      title: "Frontend Lead",
+      status: "Rejected",
+      date: "2025-04-20",
+    },
   ];
 
   // Save demo data to localStorage

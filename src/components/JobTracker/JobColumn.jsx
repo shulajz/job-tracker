@@ -34,11 +34,15 @@ const JobColumn = ({
         </span>
       </div>
       <div
-        className={`flex-1 rounded-b-lg ${
+        className={`rounded-b-lg ${
           darkMode
             ? "bg-gray-800/90 backdrop-blur-sm"
             : "bg-white/90 backdrop-blur-sm"
-        } p-3 shadow-md min-h-[400px] transition-colors duration-200 border border-t-0 ${
+        } p-3 shadow-md h-[440px] overflow-y-auto scrollbar-thin ${
+          darkMode
+            ? "scrollbar-thumb-gray-600 scrollbar-track-gray-800"
+            : "scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+        } border border-t-0 ${
           darkMode ? "border-gray-700" : "border-gray-100"
         }`}
         onDrop={onDrop}
@@ -47,7 +51,7 @@ const JobColumn = ({
         {jobs.length === 0 ? (
           <EmptyState status={status} darkMode={darkMode} onAddJob={onAddJob} />
         ) : (
-          <div className="space-y-3">
+          <div className="space-y-3 pr-1">
             {jobs.map((job) => (
               <JobCard
                 key={job.id}

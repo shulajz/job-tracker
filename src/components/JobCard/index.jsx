@@ -17,7 +17,7 @@ const JobCard = ({ job, darkMode, onEdit, onDelete, handleDragStart }) => {
         colors.border
       } shadow-sm hover:shadow-md transform hover:-translate-y-1 backdrop-blur-sm bg-gradient-to-br ${
         colors.bg
-      }`}
+      } h-[100px]`}
       draggable
       onDragStart={(e) => handleDragStart(e, job.id)}
     >
@@ -25,9 +25,9 @@ const JobCard = ({ job, darkMode, onEdit, onDelete, handleDragStart }) => {
         <div>
           <h3 className="font-medium text-sm">{job.company}</h3>
           <p
-            className={
-              darkMode ? "text-xs text-gray-300" : "text-xs text-gray-500"
-            }
+            className={`text-xs ${
+              darkMode ? "text-gray-300" : "text-gray-500"
+            }`}
           >
             {job.title}
           </p>
@@ -57,11 +57,13 @@ const JobCard = ({ job, darkMode, onEdit, onDelete, handleDragStart }) => {
           />
         </div>
       </div>
-      <StatusIndicator
-        status={job.status}
-        date={job.date}
-        darkMode={darkMode}
-      />
+      <div className="mt-auto pt-2">
+        <StatusIndicator
+          status={job.status}
+          date={job.date}
+          darkMode={darkMode}
+        />
+      </div>
     </div>
   );
 };
