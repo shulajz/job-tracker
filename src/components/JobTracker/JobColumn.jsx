@@ -14,6 +14,12 @@ const JobColumn = ({
   handleDragStart,
   onAddJob,
 }) => {
+  // Calculate the exact height needed for 4 cards
+  // Each card is 100px high, with 12px spacing (space-y-3) between them,
+  // and 12px padding (p-3) on top and bottom
+  // Total: (4 × 100px) + (3 × 12px) + (2 × 12px) = 400 + 36 + 24 = 460px
+  const columnHeight = "460px";
+
   return (
     <div className="flex flex-col h-full transform transition-all duration-300 hover:scale-[1.02]">
       <div
@@ -36,15 +42,16 @@ const JobColumn = ({
       <div
         className={`rounded-b-lg ${
           darkMode
-            ? "bg-gray-800/90 backdrop-blur-sm"
+            ? "bg-gray-500/90 backdrop-blur-sm"
             : "bg-white/90 backdrop-blur-sm"
-        } p-3 shadow-md h-[440px] overflow-y-auto scrollbar-thin ${
-          darkMode
-            ? "scrollbar-thumb-gray-600 scrollbar-track-gray-800"
-            : "scrollbar-thumb-gray-300 scrollbar-track-gray-100"
-        } border border-t-0 ${
-          darkMode ? "border-gray-700" : "border-gray-100"
+        } p-3 shadow-md overflow-y-auto border border-t-0 ${
+          darkMode ? "border-gray-500" : "border-gray-100"
         }`}
+        style={{
+          height: columnHeight,
+          scrollbarWidth: "thin",
+          scrollbarColor: darkMode ? "#9CA3AF #6B7280" : "#D1D5DB #F3F4F6",
+        }}
         onDrop={onDrop}
         onDragOver={onDragOver}
       >
