@@ -109,6 +109,7 @@ const JobTracker = () => {
     (job) => job.status === "Interviewing"
   );
   const offers = filteredJobs.filter((job) => job.status === "Offer");
+  const rejected = filteredJobs.filter((job) => job.status === "Rejected");
 
   // Modal open/close handlers
   const openAddModal = () => setShowAddModal(true);
@@ -158,7 +159,7 @@ const JobTracker = () => {
 
       {/* Main content */}
       <main className="relative z-10 py-8 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
           {/* Applied Column */}
           <JobColumn
             status="Applied"
@@ -191,6 +192,19 @@ const JobTracker = () => {
             jobs={offers}
             darkMode={darkMode}
             onDrop={(e) => handleDrop(e, "Offer")}
+            onDragOver={handleDragOver}
+            onEditJob={handleEditJob}
+            onDeleteJob={deleteJob}
+            handleDragStart={handleDragStart}
+            onAddJob={openAddModal}
+          />
+
+          {/* Rejected Column */}
+          <JobColumn
+            status="Rejected"
+            jobs={rejected}
+            darkMode={darkMode}
+            onDrop={(e) => handleDrop(e, "Rejected")}
             onDragOver={handleDragOver}
             onEditJob={handleEditJob}
             onDeleteJob={deleteJob}

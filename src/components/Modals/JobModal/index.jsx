@@ -108,6 +108,7 @@ const JobModal = ({ onClose, onSubmit, job, darkMode }) => {
                 { value: "Applied", label: "Applied" },
                 { value: "Interviewing", label: "Interviewing" },
                 { value: "Offer", label: "Offer" },
+                { value: "Rejected", label: "Rejected" },
               ]}
             />
 
