@@ -24,7 +24,11 @@ const JobCard = ({ job, darkMode, onEdit, onDelete, handleDragStart }) => {
       <div className="flex justify-between">
         <div>
           <h3 className="font-medium text-sm">{job.company}</h3>
-          <p className="text-xs text-gray-500 dark:text-gray-400">
+          <p
+            className={
+              darkMode ? "text-xs text-gray-300" : "text-xs text-gray-500"
+            }
+          >
             {job.title}
           </p>
         </div>
